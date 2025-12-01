@@ -28,7 +28,7 @@ public final class IpacChatFilter extends JavaPlugin implements Listener {
     public static SensitiveWordBs wordBs = null;
     public static List<String> wordDenys;
     public static List<String> wordAllows;
-    public static List<Map<?, ?>> preRegexList;
+    public static List<Map<?, ?>> preRegexList = new ArrayList<>();
 
     @Override
     public void onEnable() {
@@ -54,7 +54,6 @@ public final class IpacChatFilter extends JavaPlugin implements Listener {
         plugin.reloadConfig();
 
         File wordDenyFile = new File(plugin.getDataFolder(), "word_deny.txt");
-        plugin.getLogger().info(wordDenyFile.toString());
         if (!wordDenyFile.exists()) {
             wordDenyFile.createNewFile();
         }
