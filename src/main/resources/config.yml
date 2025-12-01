@@ -20,7 +20,7 @@ bsConfig:
   ignoreCase: true
   # 忽略全角半角
   ignoreWidth: true
-  # 忽略数字格式，例如阿拉伯数字、罗马数字等
+  # 忽略数字的写法
   ignoreNumStyle: true
   # 忽略中文繁简体
   ignoreChineseStyle: true
@@ -74,5 +74,3 @@ wordReplaceTo: '*'
 
 # 消息被替换时打印日志
 log: true
-
-
