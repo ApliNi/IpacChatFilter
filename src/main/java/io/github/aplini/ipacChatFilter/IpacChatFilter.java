@@ -141,9 +141,11 @@ public final class IpacChatFilter extends JavaPlugin implements Listener {
         result = wordBs.replace(result);
 
         if(!message.equals(result)){
-            event.setMessage(result);
+            if(plugin.getConfig().getBoolean("setMessage", true)){
+                event.setMessage(result);
+            }
             if(plugin.getConfig().getBoolean("log", true)){
-                plugin.getLogger().info("Original[" + event.getPlayer().getName() + "]: " + message);
+                plugin.getLogger().info("HIT [" + event.getPlayer().getName() + "]: " + message);
             }
         }
     }
