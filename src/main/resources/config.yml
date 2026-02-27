@@ -7,6 +7,9 @@
 # word_allow.txt - 允许词列表, 每行一个, 用于处理误检的情况
 # word_deny.txt  - 敏感词列表, 每行一个
 
+# 没有聊天权限时发出提示
+noChatPermission: "&6IpacEL &f> &b目前参观账户不能发送消息"
+
 # 替换玩家消息, 关闭后仅检测, 用于测试误判情况
 setMessage: true
 

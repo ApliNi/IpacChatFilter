@@ -12,6 +12,9 @@ permissions:
   IpacChatFilter.bypass:
     description: 绕过消息过滤
     default: false
+  IpacChatFilter.chat:
+    description: 允许发送聊天消息
+    default: true
 
 commands:
   icf:

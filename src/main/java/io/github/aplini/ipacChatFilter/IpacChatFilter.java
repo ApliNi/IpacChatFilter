@@ -10,6 +10,7 @@ import com.github.houbb.sensitive.word.support.tag.WordTags;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -120,6 +121,12 @@ public final class IpacChatFilter extends JavaPlugin implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onAsyncPlayerChatEvent(AsyncPlayerChatEvent event){
+        Player player = event.getPlayer();
+
+        if(!player.hasPermission("IpacChatFilter.chat")){
+            event.setCancelled(true);
+            player.sendMessage(plugin.getConfig().getString("noChatPermission", ""));
+        }
 
         if(!event.getPlayer().hasPermission("IpacChatFilter.filter")){
             return;
